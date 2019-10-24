@@ -1,0 +1,17 @@
+.layout-top-nav {
+  height: $height-top-nav;
+}
+
+.layout-left-side {
+  width: $width-left-side !important;
+}
+
+.el-container {
+  height: 100%;
+}
+
+.containerMain {
+  overflow-x: hidden;
+  width: 100%;
+  background: $color-main-bg;
+}

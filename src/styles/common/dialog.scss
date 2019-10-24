@@ -1,0 +1,90 @@
+/* 所有的弹窗样式写这,整成一个文件 */
+.source-add-mysql {
+  .dialog-footer__right {
+    cursor: pointer;
+  }
+
+}
+
+.downloadBulletBox {
+  .el-input__inner {
+    width: 200px;
+  }
+
+  .el-dialog__body {
+    padding: 0px 20px 0 20px;
+  }
+
+  .el-form-item__label {
+    font-size: 12px;
+    color: #545B68;
+  }
+
+  .box-border {
+    width: 600px;
+    height: 300px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px dashed rgba(81, 130, 228, 1);
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 17px;
+    padding-top: 65px;
+
+    .iconfont {
+      font-size: 50px;
+      color: rgba(81, 130, 228, 1);
+    }
+
+    p {
+      font-family: MicrosoftYaHei-Bold;
+      font-weight: bold;
+      color: rgba(84, 91, 104, 1);
+      line-height: 14px;
+      margin-top: 21px;
+    }
+
+    span {
+      font-size: 12px;
+      color: rgba(116, 120, 129, 1);
+    }
+
+    .load-bar {
+      display: inline-block;
+      width: 300px;
+      height: 10px;
+      border: 1px solid rgba(81, 130, 228, 1);
+      border-radius: 4px;
+
+      .Loading {
+        width: 50%;
+        height: 100%;
+        background: rgba(81, 130, 228, 1);
+      }
+    }
+
+    .load {
+      font-size: 12px;
+      font-family: MicrosoftYaHei-Bold;
+      font-weight: bold;
+      color: rgba(81, 130, 228, 1);
+      margin-top: 14px;
+    }
+
+    .download {
+      margin-top: 20px;
+
+      .button {
+        width: 100px;
+        height: 30px;
+        background: rgba(245, 118, 97, 1);
+        border-radius: 4px;
+        padding: 0px;
+      }
+
+      span {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}

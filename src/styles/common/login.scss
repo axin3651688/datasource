@@ -1,0 +1,211 @@
+/* reset element-ui css */
+.login-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: url(~@a/newLoginBg.png) no-repeat center;
+  background-size: cover;
+  z-index: 1;
+
+  .el-form-item__error {
+    position: relative;
+  }
+
+  // opacity:0.7;
+  .login-company-name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8%; //gjx 由原来的80px改成了8%
+
+    .left {
+      font-size: 38px;
+      font-family: MicrosoftYaHei-Bold;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 1);
+      float: left;
+    }
+
+    span {
+      width: 1px;
+      height: 48px;
+      display: inline-block;
+      background: rgba(255, 255, 255, 1);
+      margin: 0 39px 0 26px;
+    }
+
+    .right {
+      float: right;
+      color: rgba(254, 254, 254, 1);
+      font-size: 28px;
+
+      p {
+        color: #ccc;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .login-border {
+    //垂直居中
+    // border-radius: 5px;
+    height: 512px;
+    width: 480px;
+    position: absolute;
+    right: 15%;
+    top: 50%;
+    margin-top: -256px;
+    background: rgba(255, 255, 255, 1);
+    // box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.5);
+    // border-radius: 5px;
+    z-index: 3;
+    // margin: 9% 0 9% 52%; //gjx 由原来的20px改成了15%
+
+    .bannerimg {
+      width: 284px;
+      height: 85px;
+      display: inline-block;
+      background: url(~@a/logo_old.svg) no-repeat center;
+      // box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      left: 195px;
+      top: -42px;
+    }
+
+    .login-top {
+      padding: 24px 0;
+      height: 72px;
+      text-align: center;
+      margin-top: 32px;
+
+      >span {
+        font-size: 18px;
+        color: #4D6593;
+        display: block;
+        margin-top: 16px;
+      }
+    }
+
+    .login-form {
+      position: absolute;
+      top: 158px;
+      left: 36px;
+      width: 408px;
+
+      .title {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 31px;
+        color: rgba(51, 51, 51, 1);
+      }
+
+      .el-form-item__content,
+      .el-form-item__label {
+        line-height: 36px !important;
+        // border-bottom: 1px solid #dcdcdc;
+        // overflow: auto;
+      }
+
+      p {
+        color: rgba(112, 125, 149, 1);
+        margin-bottom: 10px;
+      }
+
+
+    }
+
+    .el-input {
+      display: inline-block;
+      height: 32px !important;
+      width: 100%;
+      background-color: #fff;
+      font-size: 18px;
+      // border-bottom: 1px solid rgba(112, 112, 112, 1);
+
+      input {
+        // background: transparent;
+        border: 0px;
+        -webkit-appearance: none;
+        border-radius: 0px;
+        // padding: 12px 5px 12px 15px;
+        color: #000;
+        height: 32px;
+        border-bottom: 1px solid #dcdcdc;
+        font-size: 12px;
+        // border-bottom: 1px solid rgba(112, 112, 112, 1);
+      }
+    }
+
+    .verification-code {
+      .el-input {
+        width: 286px;
+        height: 48px;
+        border: 1px solid rgba(229, 229, 229, 1);
+        // background: linear-gradient(0deg, rgba(188, 187, 187, 1), rgba(220, 220, 220, 1));
+        border-radius: 10px;
+      }
+
+      .el-form-item {
+        margin-bottom: 30px;
+      }
+
+      .el-form-item__content,
+      .el-form-item {
+        width: 286px;
+        height: 48px;
+        float: left;
+      }
+
+      .display-code {
+        float: right;
+        width: 143px;
+        height: 48px;
+        text-align: center;
+        line-height: 48px;
+        font-size: 24px;
+        cursor: pointer;
+        border: 1px solid rgba(229, 229, 229, 1);
+        // background: linear-gradient(0deg, rgba(188, 187, 187, 1), rgba(220, 220, 220, 1));
+      }
+    }
+
+    .el-form-item {
+      // background: rgba(0, 0, 0, 0.1);
+      // border: NaNpx solid rgba(81, 130, 228, 1);
+      border-radius: 10px;
+      color: #000;
+
+      .show-pwd {
+        position: absolute;
+        font-size: 30px;
+        right: 10px;
+        top: 8px;
+        height: 25px;
+        color: #889aa4;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+
+    .btn_wrapp {
+      margin-top: 33px;
+
+      .login_button {
+        margin-top: 33px;
+        height: 40px;
+        width: 408px;
+        font-size: 18px;
+        line-height: 13px;
+        // background: linear-gradient(0deg, rgba(40, 117, 203, 1), rgba(70, 157, 238, 1));
+        background: rgba(67, 126, 240, 1);
+        border: NaNpx solid rgba(229, 229, 229, 1);
+        border-radius: 0 !important;
+
+        span {
+          font-size: 14px;
+        }
+      }
+
+    }
+  }
+}

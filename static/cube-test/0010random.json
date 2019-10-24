@@ -1,0 +1,244 @@
+{
+  "id": 24,
+  "text": "营业收入趋势分析表",
+  "dataType": "random",
+  "config": {
+    "type": 1,
+    "hidden": true,
+    "dimName": "period",
+    "useDbName": true,
+    "group": {
+      "id": "period"
+    },
+    "sum": {
+      "id": "100",
+      "text": "行合计"
+    },
+    "colSum": {
+      "id": "200",
+      "text": "列合计",
+      "type": "sum"
+    }
+  },
+  "columns": [{
+      "id": "id",
+      "text": "编码",
+      "type": "index",
+      "fixed": true,
+      "hidden": false
+    },
+    {
+      "id": "text",
+      "type": "string",
+      "fixed": true,
+      "text": "期间",
+      "drill": {
+        "targetId": "002",
+        "type": "cellclick",
+        "way": "addTab",
+        "sourceApi": "/cnbi/json/source/jsnk/drillSecond.json",
+        "location": "before"
+
+      }
+    },
+    {
+      "id": "itemperiod",
+      "type": "string",
+      "text": "项目"
+
+    },
+    {
+      "id": "A",
+      "text": "本期",
+      "sort": "asc",
+      "align": "left",
+      "formatter": {
+        "decimal": {
+          "digit": 2,
+          "subfix": "元",
+          "millesimal": true
+        }
+      },
+      "type": "decimal"
+    },
+    {
+      "id": "asntq",
+      "type": "decimal",
+      "text": "本期上年同期",
+      "formatter": {
+        "decimal": {
+          "digit": 2,
+          "subfix": "元",
+          "millesimal": false
+        }
+      },
+      "hidden": false
+    },
+    {
+      "id": "azje",
+      "text": "增减额",
+      "fomular": "(A-asntq)",
+      "formatter": {
+        "decimal": {
+          "digit": 2,
+          "subfix": "元",
+          "millesimal": true
+        },
+        "divit": {
+          "digit": 2
+        }
+      },
+      "type": "decimal"
+    },
+    {
+      "id": "zjv",
+      "text": "增减率(%)",
+      "fomular": "(A-asntq)*100/A",
+      "formatter": {
+        "decimal": {
+          "digit": 2,
+          "subfix": "%",
+          "millesimal": true
+        }
+      },
+      "renderFormatter": [{
+        "field": "zjv",
+        "id": 1,
+        "type": {
+          "css": "color:blue;font-size:20px;"
+        },
+        "children": [{
+          "calcSymbol": ">",
+          "field": "zjv",
+          "id": 2,
+          "value": 0
+        }, {
+          "calcSymbol": "<=",
+          "field": "zjv",
+          "logicSymbol": "and",
+          "id": 2,
+          "value": 50
+        }]
+      }, {
+        "calcSymbol": ">",
+        "field": "zjv",
+        "id": 2,
+        "type": {
+          "icon": "https://cnbi.jiaxin365.cn/img/table_file/3-4.png"
+        },
+        "value": 51
+      }, {
+        "calcSymbol": "<",
+        "field": "zjv",
+        "id": 2,
+        "type": {
+          "css": "color:red;font-size:15px;"
+        },
+        "value": 0
+      }],
+      "type": "decimal"
+    }
+  ],
+  "rows": [{
+    "id": "1100110",
+    "text": "营业收入",
+    "fomular": "0001!A$111011+0003!B$111002"
+  }],
+  "filters": [{
+      "id": 1,
+      "type": 1,
+      "children": [{
+          "calcSymbol": ">=",
+          "field": "id",
+          "id": 1,
+          "type": 1,
+          "value": "201701"
+        },
+        {
+          "calcSymbol": "<",
+          "field": "id",
+          "id": 2,
+          "logicSymbol": "and",
+          "type": 1,
+          "value": "201906"
+        }
+      ]
+    },
+    {
+      "calcSymbol": "<",
+      "field": "id",
+      "id": 2,
+      "logicSymbol": "and",
+      "type": 1,
+      "value": "2019010"
+    }
+  ],
+  "datas": [],
+  "__cube": {
+    "dims": [{
+      "id": "period",
+      "text": "期间"
+    }],
+    "facts": [{
+        "id": "ogtType",
+        "index": 1,
+        "items": []
+      },
+      {
+        "id": "period",
+        "index": 2,
+        "items": [
+          "201605",
+          "201805"
+        ]
+      },
+      {
+        "id": "fact",
+        "index": 3,
+        "items": [{
+            "id": "A",
+            "text": "XX"
+          },
+          {
+            "id": "B",
+            "text": "XX"
+          },
+          {
+            "id": "C",
+            "text": "XX"
+          }
+        ]
+      }
+    ]
+  },
+  "needDims": {
+    "year": {
+      "id": "2019",
+      "text": "2019年",
+      "datas": []
+    },
+    "month": {
+      "id": 5,
+      "text": "5月",
+      "datas": []
+    },
+    "company": {
+      "id": 1,
+      "text": "江苏农垦",
+      "datas": []
+    },
+    "itemperiod": {
+      "id": "1100110",
+      "text": "营业收入",
+      "datas": []
+    }
+  },
+  "generater": {
+    "period": {
+      "periodCount": 16,
+      "compareType": "0&-1",
+      "reverse": false
+    },
+    "varName": "rows"
+  }
+}

@@ -1,0 +1,6 @@
+@import './variables.scss';
+@import './transition.scss';
+@import './mixin.scss';
+@import './common.scss';
+@import './element-ui.scss'; // 全局覆写element-ui的样式，实现风格统一
+@import './common/index.scss';

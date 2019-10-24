@@ -1,0 +1,32 @@
+// 基于sass的web主题切换: https://www.jianshu.com/p/880945299f4a
+// 语法参考sass官网 https://www.sass.hk/docs/
+// 辨析Sass中的Map和List: https://www.sass.hk/skill/sass131.html
+// `@content`用在`mixin`里面的，当定义一个`mixin`后，并且设置了`@content`；
+// `@include`的时候可以传入相应的内容到`mixin`里面, 类似于vue的匿名插槽
+@import './_themes.scss';
+
+/*
+  使用demo
+  .app-home {
+    font-size: 18px;
+    @include themeify {
+      color: themed('font-color');
+    }
+  }
+*/
+
+@mixin themeify {
+
+  @each $theme-name,
+  $theme-map in $themes {
+    $theme-map: $theme-map !global;
+
+    [data-theme=#{$theme-name}] & {
+      @content;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

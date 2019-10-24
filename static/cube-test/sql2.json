@@ -1,0 +1,111 @@
+{
+  "id": "sql2",
+  "cubeId": 731,
+  "text": "sql数据集同比环比测试",
+  "dataType": "sql",
+  "config": {
+    "sql": 1317,
+    "cubeId": 68,
+    "datasource": "402881fa69c31b540169c31b54d10000"
+  },
+  "pagination": {
+    "page": 1,
+    "size": 100
+  },
+  "count": 26,
+  "columns": [{
+    "fomular": "",
+    "hidden": false,
+    "flex": true,
+    "id": "itemscode",
+    "text": "编码",
+    "type": "text"
+  }, {
+    "fomular": "",
+    "hidden": false,
+    "id": "items",
+    "text": "项目名称",
+    "type": "text"
+  }, {
+    "fomular": "",
+    "hidden": false,
+    "id": "A",
+    "text": "A",
+    "type": "decimal"
+  }, {
+    "fomular": "",
+    "hidden": false,
+    "id": "B",
+    "text": "B",
+    "type": "decimal"
+  }, {
+    "fomular": "",
+    "hidden": false,
+    "id": "C",
+    "text": "C",
+    "type": "decimal"
+  }, {
+    "fomular": "",
+    "hidden": false,
+    "id": "D",
+    "text": "D",
+    "type": "decimal"
+  }, {
+    "fomular": "",
+    "hidden": false,
+    "id": "E",
+    "text": "E",
+    "type": "decimal"
+  }, {
+    "fomular": "",
+    "hidden": false,
+    "id": "F",
+    "text": "F",
+    "type": "decimal"
+  }],
+  "compares": [{
+    "type": 2,
+    "field": "period",
+    "fact": "A",
+    "data": "-1&0",
+    "hidden": false,
+    "fomularAddToFact": false,
+    "fomular": "(A-asntq)/A*100",
+    "hiddenFomularColumn": false,
+    "periodCount": 2,
+    "compareText": "上期金额(同比)",
+    "compareZtext": "增减率",
+    "formatter": {
+      "decimal": {
+        "digit": 2,
+        "millesimal": true,
+        "subfix": "%"
+      }
+    }
+  }],
+  "rows": [],
+  "filters": [],
+  "cube": {},
+  "needDims": {
+    "period": {
+      "id": "201606",
+      "text": "期间（勿删）",
+      "datas": []
+    },
+    "company": {
+      "id": "1",
+      "text": "公司（勿删）",
+      "datas": []
+    }
+  },
+  "generater": {},
+  "fixed": 0,
+  "warnFilters": null,
+  "updateTime": 1563346278836,
+  "updateUser": {
+    "id": 539,
+    "trueName": "姜海斌",
+    "avatar": "http://220.180.229.94:6680/group2/M00/00/0D/wKgC2lxqYKWAZAzHAAS8TUHSEpA876.png",
+    "phone": "17681010000"
+  }
+}

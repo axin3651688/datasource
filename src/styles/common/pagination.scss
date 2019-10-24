@@ -1,0 +1,16 @@
+.pagination__wrapper {
+    // 最好不要在组件内部写定位，谁用，谁给他定位
+    //position: fixed;
+    //bottom: 0px;
+    //right: 0px;
+    //width: calc(100vw - #{$width-left-side});
+    //height: 60px;
+    //background: rgba(255, 255, 255, 1);
+    //box-shadow: 0px -3px 10px 0px rgba(105, 133, 165, 0.3);
+
+    .pagination {
+        padding: 20px 0;
+        float: right;
+        padding-right: 21px;
+    }
+}

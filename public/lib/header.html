@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.5.17/vue.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.8.2/theme-chalk/index.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.8.2/index.js"></script>
+  <script src="https://avuex.avue.top/cdn/aliyun-oss-sdk.min.js"></script>
+  <!-- 导入表格需要的包 -->
+
+  <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+  <script src="https://cdn.bootcss.com/xlsx/0.14.1/xlsx.full.min.js"></script>
+
+  <link rel="stylesheet" href="./index.css" />
+  <script src="./avue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <avue-crud @cell-click="cellClick" :option="option" :data="data" :page="page" @on-load="onLoad"></avue-crud>
+  </div>
+</body>
+
+</html>
+
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        page: {
+          pageSize: 20
+        },
+        option: {
+          border: true,
+          index: true,
+          header: false, // 头部隐藏
+          menu: false, // 不要目录
+          expandLevel: 3,
+          headerAlign: 'center',
+          excelBtn: true,
+          align: 'center',
+          rowKey: 'id',
+          labelWidth: 100,
+          column: [{
+              width: 150,
+              text: '姓名',
+              id: 'name'
+            }, {
+              text: '性别1',
+              id: 'sex'
+            },
+            {
+              text: '自定义图标',
+              id: 'icon',
+              type: 'icon-select',
+              iconList: [{
+                text: '基本图表',
+                list: ['el-icon-time', 'el-icon-bell', 'el-icon-star-on']
+              }]
+            }, {
+              text: '复杂表头',
+              children: [{
+                text: '信息',
+                children: [{
+                  text: '年龄',
+                  id: 'age'
+                }, {
+                  text: '手机号',
+                  id: 'phone'
+                }, {
+                  text: '单位：天',
+                  children: [{
+                      text: 'D1-D3天数',
+                      children: [{
+                        text: 'D1天数',
+                        id: 'd1day',
+                        type: 'number',
+                        minWidth: '100',
+                        minRows: 0,
+                        span: 24
+                      }, {
+                        text: 'D2天数',
+                        id: 'd2day',
+                        type: 'number',
+                        minWidth: '100',
+                        minRows: 0,
+                        span: 24
+                      }, {
+                        text: 'D3天数',
+                        id: 'd3day',
+                        type: 'number',
+                        minWidth: '100',
+                        minRows: 0,
+                        span: 24
+                      }]
+                    },
+                    {
+                      text: 'D4天数',
+                      id: 'd4day',
+                      type: 'number',
+                      minWidth: '100',
+                      minRows: 0,
+                      span: 24
+                    },
+                    {
+                      text: 'D5天数',
+                      id: 'd5day',
+                      type: 'number',
+                      minWidth: '100',
+                      minRows: 0,
+                      span: 24
+                    },
+                    {
+                      text: 'D6天数',
+                      id: 'd6day',
+                      type: 'number',
+                      minWidth: '100',
+                      minRows: 0,
+                      span: 24
+                    },
+                    {
+                      text: 'D7天数',
+                      id: 'd7day',
+                      type: 'number',
+                      minWidth: '100',
+                      minRows: 0,
+                      span: 24
+                    },
+                    {
+                      text: 'D8天数',
+                      id: 'd8day',
+                      type: 'number',
+                      minWidth: '100',
+                      minRows: 0,
+                      span: 24
+                    }
+                  ]
+                }]
+              }, {
+                text: '级别',
+                id: 'grade',
+                type: 'select',
+                dicData: [{
+                  text: '测试',
+                  value: 1
+                }]
+              }]
+            }, {
+              text: '测试',
+              id: 'test'
+            },
+            {
+              text: '手机信息1',
+              id: 'phone1'
+            }
+          ]
+        },
+        data: [{
+          id: 1,
+          name: '张三',
+          age: 14,
+          grade: 1,
+          phone1: '17547400800',
+          phone: '17547400800',
+          icon: 'el-icon-time',
+          test: 1,
+          sex: '男',
+          children: [{
+            id: 2,
+            name: '李四',
+            age: 20,
+            grade: 1,
+            sex: '男',
+            test: 1,
+            phone1: '17547400800',
+            phone: '17547400800',
+            icon: 'el-icon-bell',
+            children: [{
+              id: 3,
+              name: '王五',
+              age: 10,
+              grade: 1,
+              test: 1,
+              sex: '女',
+              icon: 'el-icon-star-on',
+              phone1: '17547400800',
+              phone: '17547400800'
+            }]
+          }]
+        }, {
+          id: 4,
+          name: '王五',
+          age: 10,
+          grade: 1,
+          test: 1,
+          sex: '女',
+          icon: 'el-icon-star-on',
+          phone1: '17547400800',
+          phone: '17547400800'
+        }]
+      }
+    },
+    methods: {
+      onLoad(page) {
+        //模拟分页
+        this.page.total = 40
+      },
+      cellClick(row, column, cell, event) {
+        console.log(row, column, cell, event, "点击事件@@@@@@@@@@@@@@@@@");
+        console.log(row[column.property], "噢噢噢噢噢噢噢噢");
+
+      }
+    }
+  })
+</script>

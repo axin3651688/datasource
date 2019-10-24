@@ -1,0 +1,90 @@
+// 基于sass的web主题切换: https://www.jianshu.com/p/880945299f4a
+// 语法参考sass官网 https://www.sass.hk/docs/
+// 辨析Sass中的Map和List: https://www.sass.hk/skill/sass131.html
+// 发布区换主题色
+$themes: ( // 八大主题色系模块
+  theme-white: ( // 纯洁白
+    // background-color: #fff,
+    // box-shadow:#fff,
+
+  ),
+  theme-mist: ( // 薄雾
+    background: rgba(245, 34, 45, 1),
+    backgrounds: rgba(245, 34, 45, 0.1),
+    border: 1px solid rgba(245, 34, 45, 1),
+    border-bottom: 1px solid rgba(245, 34, 45, 1),
+    box-shadows: 4px 0px 6px rgba(245, 34, 45, 0.1),
+    border-left: 2px solid rgba(245, 34, 45, 0.1),
+    color:rgba(245, 34, 45, 1),
+    background-color:rgba(207, 19, 34, 1),
+    border-right: 8px solid rgba(245, 34, 45, 1),
+  ),
+  theme-nightfall: ( //日暮
+    background: rgba(250, 140, 22, 1),
+    backgrounds: rgba(250, 140, 22, 0.1),
+    border: 1px solid rgba(250, 140, 22, 1),
+    border-bottom: 1px solid rgba(250, 140, 22, 1),
+    box-shadows: 4px 0px 6px rgba(250, 140, 22, 0.1),
+    border-left: 2px solid rgba(250, 140, 22, 0.1),
+    color:rgba(250, 140, 22, 1),
+    background-color:rgba(212, 107, 8, 1),
+    border-right: 8px solid rgba(250, 140, 22, 1),
+  ),
+  // Sky blue
+  theme-sunrise: ( //日出
+    background: rgba(250, 219, 20, 1),
+    backgrounds: rgba(250, 219, 20, 0.1),
+    border: 1px solid rgba(250, 219, 20, 1),
+    border-bottom: 1px solid rgba(250, 219, 20, 1),
+    box-shadows: 4px 0px 6px rgba(250, 219, 20, 0.1),
+    border-left: 2px solid rgba(250, 219, 20, 0.1),
+    color:rgba(250, 219, 20, 1),
+    background-color:rgba(212, 177, 6, 1),
+    border-right: 8px solid rgba(250, 219, 20, 1),
+  ),
+  theme-lime: ( //青柠
+    background: rgba(160, 217, 17, 1),
+    backgrounds: rgba(160, 217, 17, 0.1),
+    border: 1px solid rgba(160, 217, 17, 1),
+    border-bottom: 1px solid rgba(160, 217, 17, 1),
+    box-shadows: 4px 0px 6px rgba(160, 217, 17, 0.1),
+    border-left: 2px solid rgba(160, 217, 17, 0.1),
+    color:rgba(160, 217, 17, 1),
+    background-color:rgba(124, 179, 5, 1),
+    border-right: 8px solid rgba(160, 217, 17, 1),
+  ),
+  theme-ming: ( //明青
+    background: rgba(19, 194, 194, 1),
+    backgrounds: rgba(19, 194, 194, 0.1),
+    border: 1px solid rgba(19, 194, 194, 1),
+    border-bottom: 1px solid rgba(19, 194, 194, 1),
+    box-shadows: 4px 0px 6px rgba(19, 194, 194, 0.1),
+    border-left: 2px solid rgba(19, 194, 194, 0.1),
+    color:rgba(19, 194, 194, 1),
+    background-color:rgba(8, 151, 156, 1),
+    border-right: 8px solid rgba(19, 194, 194, 1),
+  ),
+  theme-blur: ( //拂晓蓝
+    background: rgba(24, 144, 255, 1),
+    backgrounds: rgba(24, 144, 255, 0.1),
+    border: 1px solid rgba(24, 144, 255, 1),
+    border-bottom: 1px solid rgba(24, 144, 255, 1),
+    box-shadows: 4px 0px 6px rgba(24, 144, 255, 0.1),
+    border-left: 2px solid rgba(24, 144, 255, 0.1),
+    color:rgba(24, 144, 255, 1),
+    background-color:rgba(9, 109, 217, 1),
+    border-right: 8px solid rgba(24, 144, 255, 1),
+  ),
+  theme-purple: ( //酱紫
+    background: rgba(114, 46, 209, 1),
+    backgrounds: rgba(114, 46, 209, 0.1),
+    border: 1px solid rgba(114, 46, 209, 1),
+    border-bottom: 1px solid rgba(114, 46, 209, 1),
+    box-shadows: 4px 0px 6px rgba(114, 46, 209, 0.1),
+    border-left: 2px solid rgba(114, 46, 209, 0.1),
+    color:rgba(114, 46, 209, 1),
+    background-color:rgba(83, 29, 171, 1),
+    border-right: 8px solid rgba(114, 46, 209, 1),
+  ),
+
+);

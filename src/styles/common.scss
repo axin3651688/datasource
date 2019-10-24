@@ -1,0 +1,380 @@
+@import "@/styles/_themeify.scss";
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 0.14rem;
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+  margin: 0;
+}
+
+
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+  /// 预防内容塌陷请用自适应
+  // min-width: 900px; //限制最小尺寸，预防内容塌陷
+}
+
+// 全局滚动条的样式
+::-webkit-scrollbar-track,
+.el-scrollbar__thumb {
+  // box-shadow: inset 0 0 5px #ccc;
+  border-radius: 55px;
+  background: rgba(228, 228, 228, 1);
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar,
+.el-scrollbar__thumb {
+  width: 9px;
+  height: 9px;
+  border-radius: 55px;
+  background: rgba(179, 189, 206, 1);
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb,
+.el-scrollbar__thumb {
+  border-radius: 55px;
+  // box-shadow: inset 0 0 5px #ccc;
+  background: rgba(179, 189, 206, 1);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+
+// 表格高度样式重写,固定高度不让滚动条掉在最下面
+// .el-table {
+//     height: calc(100vh - 64px);
+//     width: 100%;
+//     overflow: auto
+// }
+
+// treeTable的显示与隐藏动效
+@keyframes treeTableShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes treeTableShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.icon {
+  // 阿里图标
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.text-important {
+  color: $color-theme-2;
+}
+
+// 主题切换
+// 默认模板
+.default-page {
+
+  .classBg,
+  .el-menu-item:focus,
+  .el-menu-item:hover,
+  .el-submenu__title:hover {
+    background: rgba(255, 145, 0, 1);
+    // box-shadow: 0px 3px 6px rgba(255, 145, 0, 1);
+
+    @include themeify {
+      background: themed("background");
+      box-shadow: themed("box-shadow");
+    }
+  }
+
+  .classBgS {
+    color: rgba(255, 145, 0, 1);
+
+    @include themeify {
+      color: themed("color")
+    }
+  }
+
+  .default-page-top,
+  .el-input__inner,
+  .el-input__inner:focus,
+  .el-select .el-input.is-focus .el-input__inner,
+  .el-select .el-input__inner:focus,
+  .el-select:hover .el-input__inner {
+    border: 1px solid rgba(255, 145, 0, 1);
+    border-color: rgba(255, 145, 0, 1);
+
+    @include themeify {
+      border: themed("border");
+    }
+  }
+
+  .default-page-aside,
+  .left-nav {
+    box-shadow: 4px 0px 6px rgba(255, 145, 0, 0.1);
+
+    @include themeify {
+      box-shadow: themed("box-shadows");
+    }
+  }
+
+  .left-center {
+    border-left: 2px solid rgba(255, 145, 0, 0.1);
+
+    @include themeify {
+      border-left: themed("border-left");
+    }
+  }
+
+  .mobile {
+    border-bottom: 1px solid rgba(255, 145, 0, 1);
+
+    @include themeify {
+      border-bottom: themed("border-bottom");
+    }
+  }
+
+}
+
+// 顶部导航
+.top-navigation-page {
+  .navigation-top-all {
+    background: #00b199;
+
+    @include themeify {
+      background: themed("background");
+    }
+  }
+
+  .default-page-top,
+  .el-input__inner,
+  .el-input__inner:focus,
+  .el-select .el-input.is-focus .el-input__inner,
+  .el-select .el-input__inner:focus,
+  .el-select:hover .el-input__inner {
+    border: 1px solid #00b199;
+
+    @include themeify {
+      border: themed("border");
+    }
+  }
+
+  .top-menu {
+    li:hover {
+      background-color: rgba(0, 157, 135, 1);
+
+      @include themeify {
+        background-color: themed("background-color");
+      }
+    }
+  }
+
+  .top-input {
+    border: 1px solid #00b199;
+
+    @include themeify {
+      border: themed("border");
+    }
+  }
+
+  .bgcolors {
+    background-color: rgba(0, 157, 135, 1);
+
+    @include themeify {
+      background-color: themed("background-color");
+    }
+  }
+
+  .bgcolor {
+    color: #00b199;
+
+    @include themeify {
+      color: themed("color");
+    }
+  }
+
+  .el-menu-item.is-active,
+  .el-submenu__title:hover {
+    background: rgba(0, 157, 135, 0.1);
+    // color: #fff;
+
+    @include themeify {
+      background: themed("backgrounds");
+    }
+  }
+}
+
+// 侧收导航
+.side-navigation-page {
+
+  .default-page-top,
+  .el-select .el-input.is-focus .el-input__inner,
+  .el-select .el-input__inner:focus,
+  .el-select:hover .el-input__inner {
+    border: 1px solid rgba(31, 32, 34, 0.3);
+
+    @include themeify {
+      border: themed("border");
+    }
+  }
+
+  .el-menu-item:focus {
+    border-right: 8px solid rgba(77, 124, 254, 1);
+
+    @include themeify {
+      border-right: themed("border-right");
+    }
+  }
+
+  .el-main {
+    .header-button {
+      background: #4d7cfe;
+
+      @include themeify {
+        background: themed("background");
+      }
+    }
+  }
+
+  .mobile {
+    border-bottom: 1px solid rgba(31, 32, 34, 0.3);
+
+    @include themeify {
+      border-bottom: themed("border-bottom");
+    }
+  }
+
+}
+
+// 公共的日历，下拉选择的颜色
+.el-select-dropdown__item.selected,
+.el-date-table td.today span,
+.el-date-table td:hover span {
+  color: #409EFF;
+
+  @include themeify {
+    color: themed("color");
+  }
+}
+
+.el-date-table td.current:not(.disabled) span {
+  background-color: #409EFF;
+
+  @include themeify {
+    background: themed("background");
+  }
+}
+
+
+
+
+// 迷你导航
+.min-navigation-page {
+  .min-top {
+    background: #5a7dfb;
+
+    @include themeify {
+      background: themed("background");
+    }
+
+    .show-list {
+      >div:hover {
+        background: #5a7dfb;
+
+        @include themeify {
+          background: themed("background");
+        }
+      }
+    }
+  }
+
+  .default-page-top,
+  .el-input__inner,
+  .el-input__inner:focus,
+  .el-select .el-input.is-focus .el-input__inner,
+  .el-select .el-input__inner:focus,
+  .el-select:hover .el-input__inner {
+    border: 1px solid #5e98fb;
+
+    @include themeify {
+      border: themed("border");
+    }
+  }
+
+  .mobile {
+    background: rgba(90, 125, 251, 1);
+    // color: #fff;
+
+    @include themeify {
+      background: themed("background");
+    }
+  }
+
+  .bgcolorNth,
+  .el-menu-item.is-active,
+  .el-submenu__title:hover {
+    background: rgba(90, 125, 251, 0.1);
+    // color: #fff;
+
+    @include themeify {
+      background: themed("backgrounds");
+    }
+  }
+
+
+
+}
