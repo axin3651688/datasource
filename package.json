@@ -35,7 +35,7 @@
     "element-ui": "^2.8.2",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.1.0",
     "script-loader": "^0.7.2",
     "sql-lint": "0.0.11",
